@@ -27,10 +27,12 @@ jobs:
         uses: actions/checkout@v3.3.0
 
       # Set Up Java JDK
-      - name: SetUp JDK 11
+      - name: Set Up Java JDK
         uses: actions/setup-java@v3
         with:
-          java-version: 11
+          java-version: '11'
+          distribution: 'temurin'
+          cache: gradle
 
       # Build with Gradle
       - name: Build with gradle

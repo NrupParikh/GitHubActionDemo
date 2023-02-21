@@ -22,7 +22,7 @@ main.yml
 ------------------------------------------
 - Put this file in MyGitActionsDemo-> .github->main.yml
 ------------------------------------------
-
+```
 # This is a basic workflow to help you get started with Actions
 
 name: Android CI
@@ -80,3 +80,4 @@ runs-on: ubuntu-latest
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+```

@@ -30,7 +30,7 @@ jobs:
       - name: Set Up Java JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '8'
+          java-version: '18'
           distribution: 'temurin'
           cache: gradle
 

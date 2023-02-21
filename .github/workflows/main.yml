@@ -38,6 +38,7 @@ jobs:
       - name: Build with gradle
         run: ./gradlew build
 
+
       # Build APK from given path
       - name: Upload a Build Artifact or APK file
         uses: actions/upload-artifact@v3.1.2

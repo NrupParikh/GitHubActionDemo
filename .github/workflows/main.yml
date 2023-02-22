@@ -42,7 +42,7 @@ jobs:
       - name: Slack File Upload
         uses: adrey/slack-file-upload-action@master
         with:
-          token: 'xoxp-4842245659364-4863470882960-4825996767143-3a0f9420b54145ef66ca024d7aa2426f'
+          token: ${{ secrets.SLACK_TOKEN }}
           path: app/build/outputs/apk/debug/app-debug.apk
           channel: developement
 

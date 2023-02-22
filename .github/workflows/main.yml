@@ -38,13 +38,6 @@ jobs:
       - name: Build with gradle
         run: ./gradlew build
 
-     
-      - name: Slack File Upload
-        uses: adrey/slack-file-upload-action@master
-        with:
-          token: ${{ secrets.SLACK_TOKEN }}
-          path: app/build/outputs/apk/debug/app-debug.apk
-          channel: developement
 
       # Build APK from given path
       - name: Upload a Build Artifact or APK file

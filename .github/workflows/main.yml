@@ -45,6 +45,13 @@ jobs:
         with:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
+          
+     # Slack Integration
+      - name: Send GitHub Action trigger data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script

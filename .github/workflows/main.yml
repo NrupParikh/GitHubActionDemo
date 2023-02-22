@@ -49,7 +49,7 @@ jobs:
      # Slack Integration
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
-        uses: actions/slack@v2.0.0
+        uses: act10ns/slack@v2.0.0
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 

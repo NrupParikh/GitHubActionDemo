@@ -81,7 +81,7 @@ jobs:
         uses: act10ns/slack@v2.0.0
         with:
             status: ${{ job.status }}
-            author_name: Build Notification
+            author_name: ${{ secrets.SLACK_WEBHOOK_URL }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       

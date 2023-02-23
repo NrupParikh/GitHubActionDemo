@@ -35,9 +35,9 @@ name: Android CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "master" ]
+    branches: [ "qa" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "qa" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -73,7 +73,8 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: app
-          path: app/build/outputs/apk/debug/app-debug.apk
+#          path: app/build/outputs/apk/debug/app-debug.apk
+          path: app/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
       
       # Sending Push message in Slack
       - name: Send GitHub Action trigger data to Slack workflow
@@ -82,6 +83,7 @@ jobs:
         with:
             status: ${{ job.status }}
             author_name: ${{ secrets.SLACK_WEBHOOK_URL }}
+            message: 'Push update in Slack from QA branch'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       
@@ -91,7 +93,8 @@ jobs:
         with:
           slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
-          file_path: app/build/outputs/apk/debug/app-debug.apk
-          initial_comment: 'post by slack-upload-file'
+#          file_path: app/build/outputs/apk/debug/app-debug.apk
+          file_path: app/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
+          initial_comment: 'QA APK for MyGitActionDemo'
     
 ```

@@ -17,6 +17,10 @@ https://www.youtube.com/watch?v=SVLyADb8rQc
 - Click configure.
 - You will see blank.yml file under GitHubActionDemo.github/workflows folder
 - rename to main.yml file
+--------------------------------------
+- To invite the SlackCICDApp in Slack type /invite @SlackCICDApp in slack channel.
+- TO add scope go to slack api [api.slack.com/apps/SlackCICDApp]
+- Add required permission and scope in OAuth & Permissions under Features section
 ---------------------------------------
 main.yml
 ------------------------------------------
@@ -29,21 +33,21 @@ name: Android CI
 
 # Controls when the workflow will run
 on:
-# Triggers the workflow on push or pull request events but only for the "main" branch
-push:
-branches: [ "master" ]
-pull_request:
-branches: [ "master" ]
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
-# Allows you to run this workflow manually from the Actions tab
-workflow_dispatch:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-# This workflow contains a single job called "build"
-build:
-# The type of runner that the job will run on
-runs-on: ubuntu-latest
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -70,14 +74,24 @@ runs-on: ubuntu-latest
         with:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      
+      # Sending Push message in Slack
+      - name: Send GitHub Action trigger data to Slack workflow
+        id: slack
+        uses: act10ns/slack@v2.0.0
+        with:
+            status: ${{ job.status }}
+            author_name: Build Notification
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      
+      # Send APK on slack
+      - name: Slack File Upload
+        uses: MeilCli/slack-upload-file@v3
+        with:
+          slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
+          channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
+          file_path: app/build/outputs/apk/debug/app-debug.apk
+          initial_comment: 'post by slack-upload-file'
+    
 ```

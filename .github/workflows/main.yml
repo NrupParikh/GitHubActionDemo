@@ -25,17 +25,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out
         uses: actions/checkout@v3.3.0
-      
+
       # Set Up Java JDK
       - name: Set Up Java JDK
-        uses: actions/setup-java@v3.10.0
-        with: 
-          java-version: 1.8
-          
+        uses: actions/setup-java@v3
+        with:
+          java-version: '18'
+          distribution: 'temurin'
+          cache: gradle
+
       # Build with Gradle
       - name: Build with gradle
         run: ./gradlew build
-        
+
+
       # Build APK from given path
       - name: Upload a Build Artifact or APK file
         uses: actions/upload-artifact@v3.1.2
@@ -43,12 +46,21 @@ jobs:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # Sending Push message in Slack
+      - name: Send GitHub Action trigger data to Slack workflow
+        id: slack
+        uses: act10ns/slack@v2.0.0
+        with:
+          status: ${{ job.status }}
+          message: 'Push update in Slack'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      # Send APK on slack
+      - name: Slack File Upload
+        uses: MeilCli/slack-upload-file@v3
+        with:
+          slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
+          channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
+          file_path: app/build/outputs/apk/debug/app-debug.apk
+          initial_comment: 'post by slack-upload-file'

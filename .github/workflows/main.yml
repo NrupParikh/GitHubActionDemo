@@ -46,14 +46,23 @@ jobs:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
       
-       # Send APK on slack
-      - name: Slack File Upload
-        uses: adrey/slack-file-upload-action@master
-        with:
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          path: app/build/outputs/apk/debug/app-debug.apk
-          channel: random
+#        # Send APK on slack
+#       - name: Slack File Upload
+#         uses: adrey/slack-file-upload-action@master
+#         with:
+#           token: ${{ secrets.SLACK_BOT_TOKEN }}
+#           path: app/build/outputs/apk/debug/app-debug.apk
+#           channel: random
  
+ 
+ # Send APK on slack
+      - name: Slack File Upload
+        uses: MeilCli/slack-upload-file@v3
+        with:
+          slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
+          channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
+          file_path: app/build/outputs/apk/debug/app-debug.apk
+          initial_comment: 'post by slack-upload-file'
     
      # Slack Integration
       - name: Send GitHub Action trigger data to Slack workflow

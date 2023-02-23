@@ -46,6 +46,7 @@ jobs:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
       
+      
  # Send APK on slack
       - name: Slack File Upload
         uses: MeilCli/slack-upload-file@v3

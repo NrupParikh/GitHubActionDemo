@@ -46,17 +46,7 @@ jobs:
           name: app
           path: app/build/outputs/apk/debug/app-debug.apk
       
-      
- # Send APK on slack
-      - name: Slack File Upload
-        uses: MeilCli/slack-upload-file@v3
-        with:
-          slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
-          channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
-          file_path: app/build/outputs/apk/debug/app-debug.apk
-          initial_comment: 'post by slack-upload-file'
-    
-     # Slack Integration
+      # Sending Push message in Slack
       - name: Send GitHub Action trigger data to Slack workflow
         id: slack
         uses: act10ns/slack@v2.0.0
@@ -65,13 +55,13 @@ jobs:
             author_name: Build Notification
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      
+      # Send APK on slack
+      - name: Slack File Upload
+        uses: MeilCli/slack-upload-file@v3
+        with:
+          slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
+          channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
+          file_path: app/build/outputs/apk/debug/app-debug.apk
+          initial_comment: 'post by slack-upload-file'
+    

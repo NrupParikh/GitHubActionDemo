@@ -7,6 +7,21 @@ android {
     namespace 'com.nrup.mygitactionsdemo'
     compileSdk 33
 
+    // For View Binding
+    buildFeatures {
+        viewBinding = true
+    }
+
+    // For release build
+    signingConfigs {
+        MyGitActionsDemoConfigs {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
     defaultConfig {
         applicationId "com.nrup.mygitactionsdemo"
         minSdk 24
@@ -17,16 +32,51 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Flavours release/qa/debug
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+        qa {
+            debuggable true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+
     }
+
+    flavorDimensions "default"
+    productFlavors {
+        myGitActionsDemo {
+            dimension "default"
+            signingConfig signingConfigs.MyGitActionsDemoConfigs
+        }
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name == "debug") {
+            buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/debug/GitActions/ApplicationService.svc/\""
+        } else if (variant.buildType.name == "qa") {
+            buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/qa/GitActions/ApplicationService.svc/\""
+        } else {
+            buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/release/GitActions/ApplicationService.svc/\""
+        }
+    }
+
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -34,7 +84,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

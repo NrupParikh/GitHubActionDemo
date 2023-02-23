@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="81111f5f-5d11-4f1e-83c2-1b664800947b" name="Changes" comment="message added in Send GitHub Action trigger data to Slack workflow" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\nrup.parikh\.android\avd\5.1_WVGA_API_27_Orio_.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2M2iBXu9eMdBFhYIeIP6CMBucmN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="MyGitActionsDemo.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81111f5f-5d11-4f1e-83c2-1b664800947b" name="Changes" comment="" />
+      <created>1676971942471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676971942471</updated>
+    </task>
+    <task id="LOCAL-00001" summary="- First commit">
+      <created>1676972917606</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676972917606</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- main.yml file added">
+      <created>1676978809969</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676978809969</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Java JDK 11 set in yml">
+      <created>1676979281555</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676979281555</updated>
+    </task>
+    <task id="LOCAL-00004" summary="- Java JDK 11 set in yml. distribution added">
+      <created>1676979531238</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676979531238</updated>
+    </task>
+    <task id="LOCAL-00005" summary="- permission for gradlew added in yml">
+      <created>1676979606727</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676979606727</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- Run Tests and Build Project added in yml">
+      <created>1676979760606</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676979760606</updated>
+    </task>
+    <task id="LOCAL-00007" summary="- Run Tests and Build Project added in yml">
+      <created>1676979807359</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676979807359</updated>
+    </task>
+    <task id="LOCAL-00008" summary="- Run Tests and Build Project added in yml ABC">
+      <created>1676979884419</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676979884419</updated>
+    </task>
+    <task id="LOCAL-00009" summary="- Run Tests and Build Project added in yml ABC">
+      <created>1676980255337</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676980255337</updated>
+    </task>
+    <task id="LOCAL-00010" summary="- Run Tests and Build Project added in yml file">
+      <created>1676980340531</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676980340531</updated>
+    </task>
+    <task id="LOCAL-00011" summary="-  java-version: '19.0.2+7'">
+      <created>1676980451402</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676980451402</updated>
+    </task>
+    <task id="LOCAL-00012" summary="-  Grant execute permission for gradlew">
+      <created>1676980630274</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1676980630274</updated>
+    </task>
+    <task id="LOCAL-00013" summary="-  Grant execute permission for gradlew">
+      <created>1676980809780</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1676980809780</updated>
+    </task>
+    <task id="LOCAL-00014" summary="-  JAVA_HOME&#10;   JAVA_HOME_19_X64">
+      <created>1676981212748</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676981212748</updated>
+    </task>
+    <task id="LOCAL-00015" summary="java-version: '8'">
+      <created>1676981590807</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1676981590807</updated>
+    </task>
+    <task id="LOCAL-00016" summary="java-version: '18'">
+      <created>1676981809874</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1676981809874</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Testing">
+      <created>1676983730518</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1676983730518</updated>
+    </task>
+    <task id="LOCAL-00018" summary="- README file added in master branch.">
+      <created>1676984991743</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1676984991743</updated>
+    </task>
+    <task id="LOCAL-00019" summary="- Code block added in README.md file">
+      <created>1676986214486</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1676986214486</updated>
+    </task>
+    <task id="LOCAL-00020" summary="- README.md updated">
+      <created>1677137228198</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1677137228198</updated>
+    </task>
+    <task id="LOCAL-00021" summary="- Resolve warning in Send GitHub Action trigger data to Slack workflow">
+      <created>1677137527280</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1677137527280</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Resolve warning in Send GitHub Action trigger data to Slack workflow">
+      <created>1677137589625</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1677137589625</updated>
+    </task>
+    <task id="LOCAL-00023" summary="message added in Send GitHub Action trigger data to Slack workflow">
+      <created>1677139813440</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1677139813440</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="9827f82c-5f36-4716-b706-eff3b73733c9">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="9827f82c-5f36-4716-b706-eff3b73733c9" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- First commit" />
+    <MESSAGE value="- main.yml file added" />
+    <MESSAGE value="- Java JDK 11 set in yml" />
+    <MESSAGE value="- Java JDK 11 set in yml. distribution added" />
+    <MESSAGE value="- permission for gradlew added in yml" />
+    <MESSAGE value="- Run Tests and Build Project added in yml" />
+    <MESSAGE value="- Run Tests and Build Project added in yml ABC" />
+    <MESSAGE value="- Run Tests and Build Project added in yml file" />
+    <MESSAGE value="-  java-version: '19.0.2+7'" />
+    <MESSAGE value="-  Grant execute permission for gradlew" />
+    <MESSAGE value="-  JAVA_HOME&#10;   JAVA_HOME_19_X64" />
+    <MESSAGE value="java-version: '8'" />
+    <MESSAGE value="java-version: '18'" />
+    <MESSAGE value="Testing" />
+    <MESSAGE value="- README file added in master branch." />
+    <MESSAGE value="- Code block added in README.md file" />
+    <MESSAGE value="- README.md updated" />
+    <MESSAGE value="- Resolve warning in Send GitHub Action trigger data to Slack workflow" />
+    <MESSAGE value="Resolve warning in Send GitHub Action trigger data to Slack workflow" />
+    <MESSAGE value="message added in Send GitHub Action trigger data to Slack workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="message added in Send GitHub Action trigger data to Slack workflow" />
+  </component>
+</project>

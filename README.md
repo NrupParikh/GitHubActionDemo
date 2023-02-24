@@ -82,7 +82,6 @@ jobs:
         uses: act10ns/slack@v2.0.0
         with:
             status: ${{ job.status }}
-            author_name: ${{ secrets.SLACK_WEBHOOK_URL }}
             message: 'Push update in Slack from QA branch'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -97,4 +96,5 @@ jobs:
           file_path: app/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
           initial_comment: 'QA APK for MyGitActionDemo'
     
+
 ```

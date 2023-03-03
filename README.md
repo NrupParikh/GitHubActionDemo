@@ -21,6 +21,13 @@ https://www.youtube.com/watch?v=SVLyADb8rQc
 - To invite the SlackCICDApp in Slack type /invite @SlackCICDApp in slack channel.
 - TO add scope go to slack api [api.slack.com/apps/SlackCICDApp]
 - Add required permission and scope in OAuth & Permissions under Features section
+
+# Now in https://api.slack.com/
+
+- generate Bot User OAuth Token
+- generate User OAuth Token [SLACK_BOT_TOKEN]
+- get SLACK_WEBHOOK_URL
+- get SLACK_CHANNEL_ID : For that go to your Slack channel [https://app.slack.com/] under your channel ex. #developement in dropdown you find Channel ID
 ---------------------------------------
 main.yml
 ------------------------------------------

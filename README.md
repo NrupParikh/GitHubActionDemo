@@ -28,6 +28,7 @@ https://www.youtube.com/watch?v=SVLyADb8rQc
 - generate User OAuth Token [SLACK_BOT_TOKEN]
 - get SLACK_WEBHOOK_URL
 - get SLACK_CHANNEL_ID : For that go to your Slack channel [https://app.slack.com/] under your channel ex. #developement in dropdown you find Channel ID
+- Define all 3 KEYS in your main.yml file to configure with slack channel and app.
 ---------------------------------------
 main.yml
 ------------------------------------------

@@ -142,3 +142,17 @@ jobs:
 - name: Grant execute permission for gradlew
   run: chmod +x gradlew
 ```
+
+# Useful Links
+
+### Slack
+https://app.slack.com/
+
+### Slack API
+https://api.slack.com/
+
+### Slack App Directory
+https://androidchat.slack.com/intl/en-in/apps
+
+### Webhook URL
+https://www.svix.com/resources/guides/how-to-get-slack-webhook-url/#:~:text=In%20the%20%22Slack%20App%20Directory,Bar%20and%20click%20on%20it.

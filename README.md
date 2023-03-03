@@ -95,3 +95,19 @@ jobs:
           initial_comment: 'post by slack-upload-file'
     
 ```
+
+
+------------------------------------------
+- If you find issue like gradlew: Permission denied such as
+  env:
+  JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/18.0.2-101/x64
+  JAVA_HOME_18_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/18.0.2-101/x64
+  /home/runner/work/_temp/287033bc-1abb-4124-9ede-76484a1c7fa2.sh: line 1: ./gradlew: Permission denied
+  Error: Process completed with exit code 126.
+------------------------------------------
+# Solution is Put below code in main.yml file
+
+```
+- name: Grant execute permission for gradlew
+  run: chmod +x gradlew
+```

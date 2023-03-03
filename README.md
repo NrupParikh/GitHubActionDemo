@@ -21,12 +21,35 @@ https://www.youtube.com/watch?v=SVLyADb8rQc
 - To invite the SlackCICDApp in Slack type /invite @SlackCICDApp in slack channel.
 - TO add scope go to slack api [api.slack.com/apps/SlackCICDApp]
 - Add required permission and scope in OAuth & Permissions under Features section
+- Select scopes for Bot Token and User Token
 
+- For Bot Token -> enable below scopes
+  - chat:write
+  - files:read
+  - files:write
+  
+- For User Token-> enable below scopes
+  - channels:history
+  - channels:read
+  - channels:write
+  - chat:write
+  - files:read
+  - files:write
+  - groups:history
+  - groups:read
+  - groups:write
+  - identify
+  - im:read
+  - mpim:history
+  - mpim:read
+  - reminders:write
+  - search:read
+  
 # Now in https://api.slack.com/
 
 - generate Bot User OAuth Token
 - generate User OAuth Token [SLACK_BOT_TOKEN]
-- get SLACK_WEBHOOK_URL
+- get SLACK_WEBHOOK_URL : For that got to slack app directory-> search Incoming Webhook -> select-> Request config-> select channel Ex. #developement -> Generate Webhook URL->Save
 - get SLACK_CHANNEL_ID : For that go to your Slack channel [https://app.slack.com/] under your channel ex. #developement in dropdown you find Channel ID
 - Define all 3 KEYS in your main.yml file to configure with slack channel and app.
 ---------------------------------------

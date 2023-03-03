@@ -46,6 +46,7 @@ https://www.youtube.com/watch?v=SVLyADb8rQc
   - search:read
   
 # Now in https://api.slack.com/
+- We required SLACK_BOT_TOKEN, SLACK_WEBHOOK_URL and SLACK_CHANNEL_ID which we put in our Git Repo's Secret for communicate between Git and Slack app.
 
 - generate Bot User OAuth Token
 - generate User OAuth Token [SLACK_BOT_TOKEN]

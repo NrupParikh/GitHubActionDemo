@@ -127,7 +127,7 @@ jobs:
     
 ```
 
-
+# Error: ./gradlew: Permission denied
 ------------------------------------------
 - If you find issue like gradlew: Permission denied such as
   env:

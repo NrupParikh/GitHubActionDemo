@@ -46,8 +46,8 @@ jobs:
         run: chmod +x gradlew
 
       # Build with Gradle
-      - name: Build with gradle
-        run: ./gradlew build
+      - name: Build prod
+        run: ./gradlew app:bundleRelease
         env:
             SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
             SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}

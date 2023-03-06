@@ -25,11 +25,10 @@ jobs:
 
       # Decode Keystore
       - name: Decode Keystore
-          id: write_file
+          id: decode_keystore
           uses: timheuer/base64-to-file@v1.2
           with:
-            fileName: 'my_github_action_keystore.jks'
-            fileDir: './app/cert/'
+            fileName: 'cert/my_github_action_keystore.jks'
             encodedString: ${{ secrets.KEYSTORE }}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out

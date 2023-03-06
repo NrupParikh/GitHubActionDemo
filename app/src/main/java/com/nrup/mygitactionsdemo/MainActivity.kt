@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.tvBuildInfo.text = """
+                Hello
                 Build Type ${BuildConfig.BUILD_TYPE}
                 BASE_URL ${BuildConfig.BASE_URL}
                 

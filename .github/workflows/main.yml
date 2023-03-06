@@ -25,8 +25,7 @@ jobs:
 
       # Decode Keystore
       - name: Decode Keystore
-          id: decode_keystore
-          uses: timheuer/base64-to-file@v1.2
+          uses: timheuer/base64-to-file@v1
           with:
             fileName: 'cert/my_github_action_keystore.jks'
             encodedString: ${{ secrets.KEYSTORE }}

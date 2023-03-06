@@ -25,7 +25,7 @@ jobs:
 
       # Decode Keystore
       - name: Decode Keystore
-          id: decode_keystore
+          id: write_file
           uses: timheuer/base64-to-file@v1.2
           with:
             fileName: 'my_github_action_keystore.jks'

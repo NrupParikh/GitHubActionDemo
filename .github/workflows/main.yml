@@ -22,14 +22,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
       # Decode Keystore
       - name: Decode Keystore
-          id: decode_keystore
-          uses: timheuer/base64-to-file@v1.2
-          with:
-            fileName: 'cert/my_github_action_keystore.jks'
-            encodedString: ${{ secrets.KEYSTORE }}
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          fileName: 'cert/my_github_action_keystore.jks'
+          encodedString: ${{ secrets.KEYSTORE }}
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out
         uses: actions/checkout@v3.3.0

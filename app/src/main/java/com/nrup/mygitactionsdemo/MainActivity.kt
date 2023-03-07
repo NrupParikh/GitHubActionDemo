@@ -1,8 +1,12 @@
 package com.nrup.mygitactionsdemo
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.viewbinding.BuildConfig
+import com.nrup.mygitactionsdemo.BuildConfig.BASE_URL
+import com.nrup.mygitactionsdemo.BuildConfig.BUILD_TYPE
 import com.nrup.mygitactionsdemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,10 +19,42 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.tvBuildInfo.text = """
-                Build Type ${BuildConfig.BUILD_TYPE}
-                BASE_URL ${BuildConfig.BASE_URL}
+                Build Type $BUILD_TYPE
+                BASE_URL $BASE_URL
                 
             """.trimIndent()
 
+        changeColorBasedOnFlavor()
+
+
+    }
+
+    private fun changeColorBasedOnFlavor() {
+        when (BuildConfig.BUILD_TYPE) {
+            "debug" -> {
+                binding.clBg.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this@MainActivity,
+                        android.R.color.holo_orange_light
+                    )
+                )
+            }
+            "qa" -> {
+                binding.clBg.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this@MainActivity,
+                        android.R.color.holo_blue_light
+                    )
+                )
+            }
+            else -> {
+                binding.clBg.setBackgroundColor(
+                    ContextCompat.getColor(
+                        this@MainActivity,
+                        android.R.color.holo_green_light
+                    )
+                )
+            }
+        }
     }
 }

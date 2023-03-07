@@ -65,11 +65,15 @@ android {
 
     applicationVariants.all { variant ->
         if (variant.buildType.name == "debug") {
-            buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/debug/GitActions/ApplicationService.svc/\""
+            //buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/debug/GitActions/ApplicationService.svc/\""
+            buildConfigField "String", "BASE_URL", BASE_URL_DEBUG
+
         } else if (variant.buildType.name == "qa") {
-            buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/qa/GitActions/ApplicationService.svc/\""
+            //buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/qa/GitActions/ApplicationService.svc/\""
+            buildConfigField "String", "BASE_URL", BASE_URL_QA
         } else {
-            buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/release/GitActions/ApplicationService.svc/\""
+            //buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/release/GitActions/ApplicationService.svc/\""
+            buildConfigField "String", "BASE_URL", BASE_URL_RELEASE
         }
     }
 

@@ -60,7 +60,8 @@ jobs:
         with:
           name: app-myGitActionsDemo-release.apk
 #          path: app/build/outputs/apk/debug/app-debug.apk
-          path: app/build/outputs/apk/myGitActionsDemos/release/app-myGitActionsDemo-release.apk
+          path: app/build/outputs/apk
+          if-no-files-found: error
       
       # Sending Push message in Slack
       - name: Send GitHub Action trigger data to Slack workflow

@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         changeColorBasedOnFlavor()
 
-
     }
 
     private fun changeColorBasedOnFlavor() {

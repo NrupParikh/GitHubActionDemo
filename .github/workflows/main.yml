@@ -55,11 +55,11 @@ jobs:
 
 
       # Build APK from given path
-      - name: Upload a Build Artifact or APK file
+      - name: Upload
         uses: actions/upload-artifact@v3.1.2
         with:
           name: app-myGitActionsDemo-qa.apk
-#          path: app/build/outputs/apk/debug/app-debug.apk
+          #          path: app/build/outputs/apk/debug/app-debug.apk
           path: app/build/outputs/apk/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
 
       # Sending Push message in Slack

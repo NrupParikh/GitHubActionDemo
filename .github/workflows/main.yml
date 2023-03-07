@@ -60,7 +60,7 @@ jobs:
         with:
           name: app-myGitActionsDemo-qa.apk
 #          path: app/build/outputs/apk/debug/app-debug.apk
-          path: app/build/outputs/apk/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
+          path: app/build/outputs/apk/myGitActionsDemo/debug/app-myGitActionsDemo-qa.apk
       
       # Sending Push message in Slack
       - name: Send GitHub Action trigger data to Slack workflow
@@ -79,6 +79,6 @@ jobs:
           slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
 #          file_path: app/build/outputs/apk/debug/app-debug.apk
-          file_path: app/build/outputs/apk/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
+          file_path: app/build/outputs/apk/myGitActionsDemo/debug/app-myGitActionsDemo-qa.apk
           initial_comment: 'QA APK for MyGitActionDemo'
     

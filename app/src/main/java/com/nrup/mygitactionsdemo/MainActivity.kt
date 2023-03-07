@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.viewbinding.BuildConfig
 import com.nrup.mygitactionsdemo.BuildConfig.BASE_URL
 import com.nrup.mygitactionsdemo.BuildConfig.BUILD_TYPE
 import com.nrup.mygitactionsdemo.databinding.ActivityMainBinding
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun changeColorBasedOnFlavor() {
-        when (BuildConfig.BUILD_TYPE) {
+        when (BUILD_TYPE) {
             "debug" -> {
                 binding.clBg.setBackgroundColor(
                     ContextCompat.getColor(

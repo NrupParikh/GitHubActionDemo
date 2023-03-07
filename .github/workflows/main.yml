@@ -22,6 +22,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Decode Keystore
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          fileName: 'cert/my_github_action_keystore.jks'
+          encodedString: ${{ secrets.KEYSTORE }}
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out
         uses: actions/checkout@v3.3.0
@@ -34,18 +42,25 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       # Build with Gradle
-      - name: Build with gradle
-        run: ./gradlew build
+      - name: Build QA
+        run: ./gradlew assembleDebug
+        env:
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
 
 
       # Build APK from given path
       - name: Upload a Build Artifact or APK file
         uses: actions/upload-artifact@v3.1.2
         with:
-          name: app
+          name: app-myGitActionsDemo-qa.apk
 #          path: app/build/outputs/apk/debug/app-debug.apk
-          path: app/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
+          path: app/build/outputs/apk/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
       
       # Sending Push message in Slack
       - name: Send GitHub Action trigger data to Slack workflow
@@ -64,6 +79,6 @@ jobs:
           slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
 #          file_path: app/build/outputs/apk/debug/app-debug.apk
-          file_path: app/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
+          file_path: app/build/outputs/apk/myGitActionsDemo/qa/app-myGitActionsDemo-qa.apk
           initial_comment: 'QA APK for MyGitActionDemo'
     

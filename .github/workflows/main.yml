@@ -47,7 +47,7 @@ jobs:
 
       # Build with Gradle
       - name: Build prod
-        run: ./gradlew app:bundleRelease
+        run: ./gradlew assembleRelease
         env:
             SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
             SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}

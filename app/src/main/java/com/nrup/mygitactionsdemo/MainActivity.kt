@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 binding.clBg.setBackgroundColor(
                     ContextCompat.getColor(
                         this@MainActivity,
-                        android.R.color.holo_green_light
+                        android.R.color.holo_red_light
                     )
                 )
             }

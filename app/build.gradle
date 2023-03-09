@@ -5,22 +5,8 @@ plugins {
 
 android {
     namespace 'com.nrup.mygitactionsdemo'
+
     compileSdk 33
-
-    // For View Binding
-    buildFeatures {
-        viewBinding = true
-    }
-
-    // For release build
-    signingConfigs {
-        MyGitActionsDemoConfigs {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
-        }
-    }
 
     defaultConfig {
         applicationId "com.nrup.mygitactionsdemo"
@@ -32,8 +18,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    // Flavours release/qa/debug
-
     buildTypes {
         release {
             debuggable false
@@ -42,17 +26,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
-        qa {
-            debuggable true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
         debug {
             debuggable true
             minifyEnabled false
+            shrinkResources false
         }
 
+    }
+
+    signingConfigs {
+        MyGitActionsDemoConfigs {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword System.getenv("ANDROID_RELEASE_STORE_PASSWORD") ?: RELEASE_STORE_PASSWORD
+            keyAlias System.getenv("ANDROID_RELEASE_KEY_ALIAS") ?: RELEASE_KEY_ALIAS
+            keyPassword System.getenv("ANDROID_RELEASE_KEY_PASSWORD") ?: RELEASE_KEY_PASSWORD
+        }
     }
 
     flavorDimensions "default"
@@ -63,21 +51,6 @@ android {
         }
     }
 
-    applicationVariants.all { variant ->
-        if (variant.buildType.name == "debug") {
-            //buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/debug/GitActions/ApplicationService.svc/\""
-            buildConfigField "String", "BASE_URL", BASE_URL_DEBUG
-
-        } else if (variant.buildType.name == "qa") {
-            //buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/qa/GitActions/ApplicationService.svc/\""
-            buildConfigField "String", "BASE_URL", BASE_URL_QA
-        } else {
-            //buildConfigField 'String', 'BASE_URL', "\"http://com.nrup.mygitactionsdemo/release/GitActions/ApplicationService.svc/\""
-            buildConfigField "String", "BASE_URL", BASE_URL_RELEASE
-        }
-    }
-
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -86,6 +59,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name == "debug") {
+            buildConfigField "String", "BASE_URL", BASE_URL_DEBUG
+
+        } else if (variant.buildType.name == "qa") {
+            buildConfigField "String", "BASE_URL", BASE_URL_QA
+        } else {
+            buildConfigField "String", "BASE_URL", BASE_URL_RELEASE
+        }
+    }
+
 }
 
 dependencies {

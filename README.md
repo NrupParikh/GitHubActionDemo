@@ -185,3 +185,11 @@ https://androidchat.slack.com/intl/en-in/apps
 
 ### Webhook URL
 https://www.svix.com/resources/guides/how-to-get-slack-webhook-url/#:~:text=In%20the%20%22Slack%20App%20Directory,Bar%20and%20click%20on%20it.
+
+## Build Variants based on productFalvors
+
+![image](https://user-images.githubusercontent.com/108717119/224921098-a8e1136a-4ea8-4c20-879f-28d5fff30fe9.png)
+
+![image](https://user-images.githubusercontent.com/108717119/224922377-6ad5284c-4ac5-470a-8cb7-aa369ac61f8f.png)
+
+

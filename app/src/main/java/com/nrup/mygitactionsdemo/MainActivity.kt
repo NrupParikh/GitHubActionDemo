@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.nrup.mygitactionsdemo.BuildConfig.BASE_URL
-import com.nrup.mygitactionsdemo.BuildConfig.BUILD_TYPE
+import com.nrup.mygitactionsdemo.BuildConfig.*
 import com.nrup.mygitactionsdemo.databinding.ActivityMainBinding
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -19,12 +19,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.tvBuildInfo.text = """
-                Build Type $BUILD_TYPE
-                BASE_URL $BASE_URL
+           
+                Build Type : $BUILD_TYPE
+                
+                BASE_URL
+                $BASE_URL
+                
+                Version Code : $VERSION_CODE
+                Version Name : $VERSION_NAME
                 
             """.trimIndent()
 
         changeColorBasedOnFlavor()
+
+        var myText = "asdf"
+
 
     }
 
@@ -34,23 +43,16 @@ class MainActivity : AppCompatActivity() {
                 binding.clBg.setBackgroundColor(
                     ContextCompat.getColor(
                         this@MainActivity,
-                        android.R.color.holo_orange_light
-                    )
-                )
-            }
-            "qa" -> {
-                binding.clBg.setBackgroundColor(
-                    ContextCompat.getColor(
-                        this@MainActivity,
                         android.R.color.holo_blue_light
                     )
                 )
             }
             else -> {
+                // Release build
                 binding.clBg.setBackgroundColor(
                     ContextCompat.getColor(
                         this@MainActivity,
-                        android.R.color.holo_red_light
+                        android.R.color.holo_green_light
                     )
                 )
             }

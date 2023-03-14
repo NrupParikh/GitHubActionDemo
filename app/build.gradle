@@ -18,12 +18,24 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword System.getenv("ANDROID_RELEASE_STORE_PASSWORD") ?: RELEASE_STORE_PASSWORD
+            keyAlias System.getenv("ANDROID_RELEASE_KEY_ALIAS") ?: RELEASE_KEY_ALIAS
+            keyPassword System.getenv("ANDROID_RELEASE_KEY_PASSWORD") ?: RELEASE_KEY_PASSWORD
+        }
+    }
+
+    // Build Types : Release for production and Debug for Testing.
+
     buildTypes {
         release {
             debuggable false
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
 
         debug {
@@ -34,20 +46,34 @@ android {
 
     }
 
-    signingConfigs {
-        MyGitActionsDemoConfigs {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword System.getenv("ANDROID_RELEASE_STORE_PASSWORD") ?: RELEASE_STORE_PASSWORD
-            keyAlias System.getenv("ANDROID_RELEASE_KEY_ALIAS") ?: RELEASE_KEY_ALIAS
-            keyPassword System.getenv("ANDROID_RELEASE_KEY_PASSWORD") ?: RELEASE_KEY_PASSWORD
-        }
-    }
 
-    flavorDimensions "default"
+    /**
+     * Product flavors. Used to change the data like, BaseUrl / static pages based on different build.
+     * Here, 6 Build variant generated. (2 Build Type * 3 Product Flavor)
+     *
+     * localDebug & localRelease
+     * uatDebug &  uatRelease
+     * productionDebug & productionRelease
+     *
+     * versionNameSuffix will shown in the Application->Version Name. ex. 1.0.prod
+     * */
+
+    flavorDimensions "version"
     productFlavors {
-        myGitActionsDemo {
-            dimension "default"
-            signingConfig signingConfigs.MyGitActionsDemoConfigs
+
+        production {
+            versionNameSuffix ".prod"
+            buildConfigField "String", "BASE_URL", BASE_URL_PRODUCTION
+        }
+
+        uat {
+            versionNameSuffix ".uat"
+            buildConfigField "String", "BASE_URL", BASE_URL_UAT
+        }
+
+        local {
+            versionNameSuffix ".local"
+            buildConfigField "String", "BASE_URL", BASE_URL_LOCAL
         }
     }
 
@@ -62,17 +88,6 @@ android {
 
     buildFeatures {
         viewBinding = true
-    }
-
-    applicationVariants.all { variant ->
-        if (variant.buildType.name == "debug") {
-            buildConfigField "String", "BASE_URL", BASE_URL_DEBUG
-
-        } else if (variant.buildType.name == "qa") {
-            buildConfigField "String", "BASE_URL", BASE_URL_QA
-        } else {
-            buildConfigField "String", "BASE_URL", BASE_URL_RELEASE
-        }
     }
 
 }

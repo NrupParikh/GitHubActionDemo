@@ -59,3 +59,36 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+/*
+*  Common Pattern [MVVM] : Singleton Pattern [ Hilt ]
+
+    - ApplicationClass : @HiltAndroidApp
+
+    - LoginActivity : @AndroidEntryPoint
+	    - LoginViewModel : @HiltViewModel & @Inject constructor
+		    - UserRepository : Interface & suspend function : Coroutine
+			    - User Local Data Source : DAO
+				    - Room DB
+			    - User Remote Data Source : APIHelper interface
+				    - Retrofit
+* */
+
+/*
+*  Mostly used Annotations in Hilt
+
+*  @HiltAndroidApp : singleton Application level class : In Application class
+*  @AndroidEntryPoint : In Activity or Fragment
+*  @HiltViewModel : In View Model
+*  @Inject : field injection
+*  @Inject constructor : constructor Injection
+*  @ApplicationContext
+*  @ActivityContext
+
+In App Module
+--------------
+*  @Module
+*  @InstallIn ->SingletonComponent
+*  @Singleton
+*  @Provides or @Binds [abstract fun] : For Retrofit/Room DB/Shared Preferences
+* */

@@ -1,4 +1,4 @@
-package com.nrup.mygitactionsdemo
+package com.nrup.mygitactionsdemo.practice
 
 import java.util.regex.Pattern
 
